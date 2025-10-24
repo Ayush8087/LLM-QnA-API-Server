@@ -54,11 +54,11 @@ llm-qna-project/
 
 
 ## 5. Environment Setup
-Step 1 — Create and Activate Virtual Environment
+- **Step 1— Create and Activate Virtual Environment**
 python -m venv venv
 venv\Scripts\activate
 
-Step 2 — Install Dependencies
+- **Step 2 — Install Dependencies**
 pip install -r requirements.txt
 
 If PyTorch installation fails:
@@ -66,14 +66,14 @@ pip install torch --index-url https://download.pytorch.org/whl/cpu
 
 
 ## 6. Running the Services
-6.1 Start Model Hosting Server
+- **6.1 Start Model Hosting Server**
 uvicorn hosting.model_server:app --host 0.0.0.0 --port 8001
 
 Expected output:
 Model loaded successfully 
 Async inference worker started
 
-6.2 Start API Server
+- **6.2 Start API Server**
 uvicorn api_server.main:app --host 0.0.0.0 --port 8000, 
 uvicorn api_server.main:app --reloads
 
@@ -92,7 +92,7 @@ These separate endpoints confirm proper separation of concerns and independent d
 
 
 ## 8. Usage Examples
-8.1 Single Inference:
+- **8.1 Single Inference:**
 
 Endpoint: /generate (Model Host) or /chat (API Server)
 
@@ -109,7 +109,7 @@ Response:
   "response": "The capital of India is New Delhi."
 }
 
-8.2 Batch Inference:
+- **8.2 Batch Inference:**
 Endpoint: /generate/batch (Model Host)
 
 Request:
@@ -131,27 +131,27 @@ Response:
 
 ## 9. Evaluation Criteria (As per Assignment)
 | **Criterion** | **Description** | **Status** |
-|-----|----------------------------------|--------|
+
 | Model Integration | LLM successfully loaded and inferenced | done |
-|-----|----------------------------------|--------|
+
 | Concurrent Processing | Implemented asynchronous queue for parallel inference | done |
-|-----|----------------------------------|--------|
+
 | Separation of Concerns | Distinct model host and API server | done |
-|-----|----------------------------------|--------|
+
 | Code Quality & Error Handling | Validations, exceptions, and logging handled | done |
-|-----|----------------------------------|--------|
+
 | Documentation | This README + clear architecture explanation | done |
-|-----|----------------------------------|--------|
+
 
 
 ## 10. Bonus Implementations
-10.1 Dynamic Batching
+- **10.1 Dynamic Batching**
 
 Implemented /generate/batch endpoint to process multiple prompts in one call.
 
 Reduced model invocation overhead and improved throughput.
 
-10.2 Async Inference Queue
+- **10.2 Async Inference Queue**
 
 Introduced asyncio.Queue() with a background worker for non-blocking requests.
 
@@ -160,25 +160,25 @@ Ensures smooth concurrent processing and responsiveness.
 
 ## 11. Design Highlights
 
-Loose Coupling: API and model host are fully independent and deployable separately.
+-Loose Coupling: API and model host are fully independent and deployable separately.
 
-Language Flexibility: API layer can be rewritten in Go without affecting Python model host.
+-Language Flexibility: API layer can be rewritten in Go without affecting Python model host.
 
-Scalability: Model host can scale on GPU or container clusters; API can scale horizontally.
+-Scalability: Model host can scale on GPU or container clusters; API can scale horizontally.
 
-Maintainability: Modular directory structure and clear service boundaries.
+-Maintainability: Modular directory structure and clear service boundaries.
 
 
 ## 13. Conclusion
 
 The project successfully demonstrates:
 
-Correct model integration and inference using Hugging Face Transformers.
+-Correct model integration and inference using Hugging Face Transformers.
 
-Asynchronous concurrent processing with batching optimization.
+-Asynchronous concurrent processing with batching optimization.
 
-Clean architectural separation between model and API layers.
+-Clean architectural separation between model and API layers.
 
-Documented performance improvements and deployment clarity.
+-Documented performance improvements and deployment clarity.
 
-This implementation fulfills all core and bonus requirements stated in the assignment.
+-This implementation fulfills all core and bonus requirements stated in the assignment.
