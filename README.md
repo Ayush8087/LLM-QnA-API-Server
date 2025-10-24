@@ -40,6 +40,8 @@ flowchart TD
     C --> B
     B --> A
 
+---
+
 ## 4. Directory Structure
 llm-qna-project/
 │
@@ -52,6 +54,7 @@ llm-qna-project/
 ├── requirements.txt           # Python dependencies
 └── README.md                  # Project documentation
 
+---
 
 ## 5. Environment Setup
 - **Step 1— Create and Activate Virtual Environment**
@@ -64,6 +67,7 @@ pip install -r requirements.txt
 If PyTorch installation fails:
 pip install torch --index-url https://download.pytorch.org/whl/cpu
 
+---
 
 ## 6. Running the Services
 - **6.1 Start Model Hosting Server**
@@ -77,19 +81,21 @@ Async inference worker started
 uvicorn api_server.main:app --host 0.0.0.0 --port 8000, 
 uvicorn api_server.main:app --reloads
 
-
+---
 
 ## 7. API Documentation
 
+|-----|-----------------------------------|--------------------------------------|
 | **Service** | **Purpose** | **Swagger URL** |
-
+|-----|-----------------------------------|--------------------------------------|
 | Model Host | Model loading, generation, batching | http://127.0.0.1:8001/docs |
-
+|-----|-----------------------------------|--------------------------------------|
 | API Server | User interaction and communication with model host | http://127.0.0.1:8000/docs |
-
+|-----|-----------------------------------|--------------------------------------|
 
 These separate endpoints confirm proper separation of concerns and independent deployability.
 
+---
 
 ## 8. Usage Examples
 - **8.1 Single Inference:**
@@ -128,57 +134,62 @@ Response:
   {"chat_id": "3", "response": "The capital of Japan is Tokyo."}
 ]
 
+---
 
 ## 9. Evaluation Criteria (As per Assignment)
 | **Criterion** | **Description** | **Status** |
-
+|-----|----------------------------------|--------|
 | Model Integration | LLM successfully loaded and inferenced | done |
-
+|-----|----------------------------------|--------|
 | Concurrent Processing | Implemented asynchronous queue for parallel inference | done |
-
+|-----|----------------------------------|--------|
 | Separation of Concerns | Distinct model host and API server | done |
-
+|-----|----------------------------------|--------|
 | Code Quality & Error Handling | Validations, exceptions, and logging handled | done |
-
+|-----|----------------------------------|--------|
 | Documentation | This README + clear architecture explanation | done |
+|-----|----------------------------------|--------|
 
-
+---
 
 ## 10. Bonus Implementations
 - **10.1 Dynamic Batching**
 
-Implemented /generate/batch endpoint to process multiple prompts in one call.
+* Implemented /generate/batch endpoint to process multiple prompts in one call.
 
-Reduced model invocation overhead and improved throughput.
+* Reduced model invocation overhead and improved throughput.
 
 - **10.2 Async Inference Queue**
 
-Introduced asyncio.Queue() with a background worker for non-blocking requests.
+* Introduced asyncio.Queue() with a background worker for non-blocking requests.
 
-Ensures smooth concurrent processing and responsiveness.
+* Ensures smooth concurrent processing and responsiveness.
+
+---
 
 
 ## 11. Design Highlights
 
--Loose Coupling: API and model host are fully independent and deployable separately.
+* Loose Coupling: API and model host are fully independent and deployable separately.
 
--Language Flexibility: API layer can be rewritten in Go without affecting Python model host.
+* Language Flexibility: API layer can be rewritten in Go without affecting Python model host.
 
--Scalability: Model host can scale on GPU or container clusters; API can scale horizontally.
+* Scalability: Model host can scale on GPU or container clusters; API can scale horizontally.
 
--Maintainability: Modular directory structure and clear service boundaries.
+* Maintainability: Modular directory structure and clear service boundaries.
 
+---
 
 ## 13. Conclusion
 
 The project successfully demonstrates:
 
--Correct model integration and inference using Hugging Face Transformers.
+* Correct model integration and inference using Hugging Face Transformers.
 
--Asynchronous concurrent processing with batching optimization.
+* Asynchronous concurrent processing with batching optimization.
 
--Clean architectural separation between model and API layers.
+* Clean architectural separation between model and API layers.
 
--Documented performance improvements and deployment clarity.
+* Documented performance improvements and deployment clarity.
 
--This implementation fulfills all core and bonus requirements stated in the assignment.
+* This implementation fulfills all core and bonus requirements stated in the assignment.
