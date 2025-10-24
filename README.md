@@ -43,7 +43,7 @@ flowchart TD
 ---
 
 ## 4. Directory Structure
-![Directory Structure](images/directory%20structure.png)
+![Directory Structure](images/DirectoryStructure.png)
 ---
 
 ## 5. Environment Setup
