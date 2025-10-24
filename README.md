@@ -149,28 +149,28 @@ Response:
 ## 10. Bonus Implementations
 - **10.1 Dynamic Batching**
 
-* Implemented /generate/batch endpoint to process multiple prompts in one call.
+   * Implemented /generate/batch endpoint to process multiple prompts in one call.
 
-* Reduced model invocation overhead and improved throughput.
+   * Reduced model invocation overhead and improved throughput.
 
 - **10.2 Async Inference Queue**
 
-* Introduced asyncio.Queue() with a background worker for non-blocking requests.
+   * Introduced asyncio.Queue() with a background worker for non-blocking requests.
 
-* Ensures smooth concurrent processing and responsiveness.
+   * Ensures smooth concurrent processing and responsiveness.
 
 ---
 
 
 ## 11. Design Highlights
 
-* Loose Coupling: API and model host are fully independent and deployable separately.
+- **Loose Coupling:** API and model host are fully independent and deployable separately.
 
-* Language Flexibility: API layer can be rewritten in Go without affecting Python model host.
+- **Language Flexibility:** API layer can be rewritten in Go without affecting Python model host.
 
-* Scalability: Model host can scale on GPU or container clusters; API can scale horizontally.
+- **Scalability:** Model host can scale on GPU or container clusters; API can scale horizontally.
 
-* Maintainability: Modular directory structure and clear service boundaries.
+- **Maintainability:** Modular directory structure and clear service boundaries.
 
 ---
 
@@ -178,12 +178,12 @@ Response:
 
 The project successfully demonstrates:
 
-* Correct model integration and inference using Hugging Face Transformers.
+   * Correct model integration and inference using Hugging Face Transformers.
 
-* Asynchronous concurrent processing with batching optimization.
+   * Asynchronous concurrent processing with batching optimization.
 
-* Clean architectural separation between model and API layers.
+   * Clean architectural separation between model and API layers.
 
-* Documented performance improvements and deployment clarity.
+   * Documented performance improvements and deployment clarity.
 
-* This implementation fulfills all core and bonus requirements stated in the assignment.
+   * This implementation fulfills all core and bonus requirements stated in the assignment.
