@@ -1,7 +1,7 @@
 # LLM QnA System — Model Hosting and API Integration
 
 ### Candidate: Ayush Ravi  
-### Internship Assignment: Go Intern – AI/ML Engineering Task  
+### Internship Assignment  
 
 ---
 
@@ -11,7 +11,7 @@ The objective of this project is to implement a modular **Question–Answering s
 The system demonstrates **separation of concerns** between:
 
 - **Model Hosting Service (Python-only):** Handles model loading and inference.  
-- **API Server (Go or Python):** Interfaces with users, forwards queries to the model host, and returns responses.
+- **API Server (Python):** Interfaces with users, forwards queries to the model host, and returns responses.
 
 This design ensures scalability, independent deployability, and language flexibility.
 
@@ -57,6 +57,7 @@ pip install torch --index-url https://download.pytorch.org/whl/cpu
 ---
 
 ## 6. Running the Services
+
 - **6.1 Start Model Hosting Server**
 uvicorn hosting.model_server:app --host 0.0.0.0 --port 8001
 
@@ -84,27 +85,32 @@ These separate endpoints confirm proper separation of concerns and independent d
 ---
 
 ## 8. Usage Examples
+
 - **8.1 Single Inference:**
 
-Endpoint: /generate (Model Host) or /chat (API Server)
+  **Endpoint:** `/generate` (Model Host) or `/chat` (API Server)
 
-Request:
-{
-  "chat_id": "1",
-  "system_prompt": "You are a helpful assistant.",
-  "user_prompt": "Capital of India?"
-}
+  **Request:**
+  ```json
+  {
+    "chat_id": "1",
+    "system_prompt": "You are a helpful assistant.",
+    "user_prompt": "Capital of India?"
+  }
 
-Response:
+**Response:**
+```json
 {
   "chat_id": "1",
   "response": "The capital of India is New Delhi."
 }
+```
 
-- **8.2 Batch Inference:**
-Endpoint: /generate/batch (Model Host)
+-**8.2 Batch Inference:**
+**Endpoint:** /generate/batch (Model Host)
 
-Request:
+**Request:**
+```json
 {
   "queries": [
     {"chat_id": "1", "system_prompt": "You are helpful", "user_prompt": "Capital of India?"},
@@ -112,13 +118,16 @@ Request:
     {"chat_id": "3", "system_prompt": "You are helpful", "user_prompt": "Capital of Japan?"}
   ]
 }
+```
 
-Response:
+**Response:**
+```json
 [
   {"chat_id": "1", "response": "The capital of India is New Delhi."},
   {"chat_id": "2", "response": "The capital of France is Paris."},
   {"chat_id": "3", "response": "The capital of Japan is Tokyo."}
 ]
+```
 
 ---
 
