@@ -51,9 +51,6 @@ venv\Scripts\activate
 - **Step 2 — Install Dependencies**
 pip install -r requirements.txt
 
-If PyTorch installation fails:
-pip install torch --index-url https://download.pytorch.org/whl/cpu
-
 ---
 
 ## 6. Running the Services
@@ -171,7 +168,7 @@ These separate endpoints confirm proper separation of concerns and independent d
 
 ---
 
-## 13. Conclusion
+## 12. Conclusion
 
 The project successfully demonstrates:
 
