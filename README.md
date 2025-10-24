@@ -130,19 +130,18 @@ Response:
 
 
 ## 9. Evaluation Criteria (As per Assignment)
-|----------------------------------------------------------------------------------------------------|
-| **Criterion**                 | **Description**                                       | **Status** |
-|----------------------------------------------------------------------------------------------------|
-| Model Integration             | LLM successfully loaded and inferenced                | done       |
-|----------------------------------------------------------------------------------------------------|
-| Concurrent Processing         | Implemented asynchronous queue for parallel inference | done       |
-|----------------------------------------------------------------------------------------------------|
-| Separation of Concerns        | Distinct model host and API server                    | done       |
-|----------------------------------------------------------------------------------------------------|
-| Code Quality & Error Handling | Validations, exceptions, and logging handled          | done       |
-|----------------------------------------------------------------------------------------------------|
-| Documentation                 | This README + clear architecture explanation          | done       |
-|----------------------------------------------------------------------------------------------------|
+| **Criterion** | **Description** | **Status** |
+|-----|----------------------------------|--------|
+| Model Integration | LLM successfully loaded and inferenced | done |
+|-----|----------------------------------|--------|
+| Concurrent Processing | Implemented asynchronous queue for parallel inference | done |
+|-----|----------------------------------|--------|
+| Separation of Concerns | Distinct model host and API server | done |
+|-----|----------------------------------|--------|
+| Code Quality & Error Handling | Validations, exceptions, and logging handled | done |
+|-----|----------------------------------|--------|
+| Documentation | This README + clear architecture explanation | done |
+|-----|----------------------------------|--------|
 
 
 ## 10. Bonus Implementations
