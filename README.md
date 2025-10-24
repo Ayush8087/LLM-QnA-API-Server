@@ -154,9 +154,43 @@ These separate endpoints confirm proper separation of concerns and independent d
    * Ensures smooth concurrent processing and responsiveness.
 
 ---
+## 11. Key Design Decisions
+
+1. **Separation of Concerns:**  
+   The project is divided into two independent services —  
+   the *Model Host* (`hosting/model_server.py`) responsible for loading and running the model,  
+   and the *API Server* (`api_server/main.py`) which handles user requests and communicates with the model host.  
+   This ensures modularity and clean code organization.
+
+2. **Asynchronous Request Handling:**  
+   Asynchronous endpoints (`async def`) are used to handle concurrent requests efficiently,  
+   allowing the model server to process multiple inputs without blocking.
+
+3. **Batch Inference Endpoint:**  
+   A `/generate/batch` route is implemented to process multiple user queries in a single call,  
+   improving throughput compared to single-request inference.
+
+4. **Lightweight Model Integration:**  
+   A small transformer model (`SmolLM2-135M-Instruct`) is integrated for fast and efficient inference,  
+   making the system suitable for CPU-based testing environments.
+
+5. **REST Communication Between Services:**  
+   The API server interacts with the model host via HTTP requests using `httpx`,  
+   keeping both components loosely coupled and independently deployable.
+
+6. **Input Validation and Error Handling:**  
+   User requests are validated through Pydantic models,  
+   and structured error responses are provided for invalid or incomplete inputs.
+
+7. **Performance Logging:**  
+   The model host logs inference duration for each batch request (e.g.,  
+   `[BATCH INFERENCE] Processed 3 prompts in 5.12 seconds`),  
+   providing basic runtime insights during testing.
+
+---
 
 
-## 11. Design Highlights
+## 12. Design Highlights
 
 - **Loose Coupling:** API and model host are fully independent and deployable separately.
 
@@ -168,7 +202,7 @@ These separate endpoints confirm proper separation of concerns and independent d
 
 ---
 
-## 12. Conclusion
+## 13. Conclusion
 
 The project successfully demonstrates:
 
