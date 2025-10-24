@@ -80,13 +80,13 @@ uvicorn api_server.main:app --reloads
 
 
 ## 7. API Documentation
-|-----------------------------------------------------------------------------------------------|
-| **Service** | **Purpose**                                        | **Swagger URL**            |
-|-----------------------------------------------------------------------------------------------|
-| Model Host  | Model loading, generation, batching                | http://127.0.0.1:8001/docs |
-|-----------------------------------------------------------------------------------------------|
-| API Server  | User interaction and communication with model host | http://127.0.0.1:8000/docs |
-|-----------------------------------------------------------------------------------------------|
+|-----|-----------------------------------|--------------------------------------|
+| **Service** | **Purpose** | **Swagger URL** |
+|-----|-----------------------------------|--------------------------------------|
+| Model Host | Model loading, generation, batching | http://127.0.0.1:8001/docs |
+|-----|-----------------------------------|--------------------------------------|
+| API Server | User interaction and communication with model host | http://127.0.0.1:8000/docs |
+|-----|-----------------------------------|--------------------------------------|
 
 These separate endpoints confirm proper separation of concerns and independent deployability.
 
