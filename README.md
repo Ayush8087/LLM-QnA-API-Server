@@ -32,18 +32,15 @@ User → API Server (port 8000) → Model Host (port 8001) → LLM Inference
 ---
 
 ## 3. Architecture Diagram
-flowchart TD
-    A[User / Client] --> B[API Server (Port 8000)]
-    B --> C[Model Host (Port 8001)]
-    C --> D[LLM Model (SmolLM2-135M-Instruct)]
-    D --> C
-    C --> B
-    B --> A
+
+![Architecture Diagram](images/ArchitectureDiagram.png)
 
 ---
 
 ## 4. Directory Structure
+
 ![Directory Structure](images/DirectoryStructure.png)
+
 ---
 
 ## 5. Environment Setup
