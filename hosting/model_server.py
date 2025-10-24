@@ -56,7 +56,7 @@ async def inference_worker():
 async def startup_event():
     """Start the async inference worker when server launches."""
     asyncio.create_task(inference_worker())
-    print("✅ Async inference worker started")
+    print(" Async inference worker started")
 
 # -------------------- SINGLE INFERENCE ENDPOINT --------------------
 @app.post("/generate", response_model=GenerateResponse)
