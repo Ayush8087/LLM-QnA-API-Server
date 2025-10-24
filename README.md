@@ -106,7 +106,7 @@ These separate endpoints confirm proper separation of concerns and independent d
 }
 ```
 
--**8.2 Batch Inference:**
+- **8.2 Batch Inference:**
 **Endpoint:** /generate/batch (Model Host)
 
 **Request:**
