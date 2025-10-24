@@ -43,16 +43,7 @@ flowchart TD
 ---
 
 ## 4. Directory Structure
-llm-qna-project/
-├── api_server/
-│   └── main.py
-│
-├── hosting/
-│   └── model_server.py
-│
-├── requirements.txt
-└── README.md
-
+![Directory Structure](images/directory%20structure.png)
 ---
 
 ## 5. Environment Setup
