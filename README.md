@@ -90,13 +90,14 @@ These separate endpoints confirm proper separation of concerns and independent d
 
   **Endpoint:** `/generate` (Model Host) or `/chat` (API Server)
 
-  **Request:**
+**Request:**
   ```json
   {
     "chat_id": "1",
     "system_prompt": "You are a helpful assistant.",
     "user_prompt": "Capital of India?"
   }
+```
 
 **Response:**
 ```json
