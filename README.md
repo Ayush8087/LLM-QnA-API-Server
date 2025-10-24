@@ -44,15 +44,14 @@ flowchart TD
 
 ## 4. Directory Structure
 llm-qna-project/
-│
 ├── api_server/
-│   └── main.py                # API layer (user-facing service)
+│   └── main.py
 │
 ├── hosting/
-│   └── model_server.py        # Model hosting service (inference, batching, async)
+│   └── model_server.py
 │
-├── requirements.txt           # Python dependencies
-└── README.md                  # Project documentation
+├── requirements.txt
+└── README.md
 
 ---
 
